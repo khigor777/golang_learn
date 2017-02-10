@@ -28,8 +28,7 @@ func ParseBook(url string)  *Book {
 	checkError(err)
 	htmlDoc, err := goquery.NewDocumentFromReader(body)
 	title := htmlDoc.Find("h1").Text()
-	price:= htmlDoc.Find("div.bOzonPrice").
-
+	price:= htmlDoc.Find("div.bOzonPrice").Text()
 	return &Book{Title:title, Price:price}
 
 }
