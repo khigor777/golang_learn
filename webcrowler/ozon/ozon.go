@@ -6,6 +6,8 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"golang.org/x/net/html/charset"
 
+	"bufio"
+	"strings"
 )
 
 type Book struct {

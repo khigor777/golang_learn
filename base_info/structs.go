@@ -49,3 +49,28 @@ func AnonimStruct()  {
 	fmt.Println(data.Id, config.Name)
 }
 
+
+
+type Driver struct {
+	Name string
+	Address1 *[]Adress
+	Adress
+}
+
+type Adress struct {
+	Addr string
+}
+
+func (addr *Adress) GetAddress() string  {
+	return addr.Addr
+}
+
+func main() (){
+	addr:= Driver{Name:"Igor"}
+	addr.Address1 = &[]Adress{Adress{"hello"}, Adress{"igor"}}
+	for _, v := range *addr.Address1{
+		fmt.Println(v.GetAddress())
+	}
+
+
+}
